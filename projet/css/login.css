@@ -1,0 +1,48 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29 mars 2014, 19:34:35
+    Author     : benjamin
+*/
+/* line 11, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\login.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/login\.less}line{font-family:\0000311}}
+html {
+  background-color: #ddddda;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 18, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\login.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/login\.less}line{font-family:\0000318}}
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ddddda;
+  height: 100%;
+  vertical-align: middle;
+}
+/* line 27, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\login.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/login\.less}line{font-family:\0000327}}
+.content {
+  display: inline-block;
+  vertical-align: middle;
+}
+/* line 31, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\login.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/login\.less}line{font-family:\0000331}}
+.content h1 {
+  text-align: center;
+  padding-bottom: 10px;
+}
+/* line 38, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\login.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/login\.less}line{font-family:\0000338}}
+button {
+  text-align: center;
+}
+/* line 42, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\login.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/login\.less}line{font-family:\0000342}}
+.form-group {
+  text-align: right;
+}

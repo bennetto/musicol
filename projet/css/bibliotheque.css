@@ -1,0 +1,75 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 7 janv. 2014, 22:07:13
+    Author     : benjamin
+*/
+/* line 12, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000312}}
+.row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+/* line 16, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000316}}
+#accordion {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+/* line 21, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000321}}
+.release-bibliotheque {
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* line 32, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000332}}
+.image-bibliotheque {
+  width: 100%;
+  height: auto;
+}
+/* line 39, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000339}}
+.div-release-bibliotheque {
+  display: inline-block;
+  word-wrap: break-word;
+  height: 40px;
+  width: 100%;
+  background-color: #428bca ;
+}
+/* line 47, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000347}}
+.div-release-bibliotheque p {
+  color: white;
+  margin-left: 5px;
+}
+/* line 54, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000354}}
+.table-hover > tbody > tr > td.info,
+.table-hover > tbody > tr > th.info,
+.table-hover > tbody > tr.info > td {
+  background-color: #d9edf7;
+  border-color: #d9edf7;
+}
+/* line 59, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000359}}
+.div-btn-add {
+  width: 100%;
+  text-align: center;
+}
+/* line 66, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000366}}
+li a {
+  cursor: pointer;
+}
+/* line 71, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\bibliotheque.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/bibliotheque\.less}line{font-family:\0000371}}
+.navbar-brand {
+  cursor: pointer;
+}

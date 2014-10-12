@@ -1,0 +1,42 @@
+
+
+
+<script type="text/template" id="template_favorites">
+
+
+
+    <div class="row">
+    <%var index = 0; %>
+    <% _.each( favorites.models ,function(release){ %>
+
+
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/releases/<%= release.get("id") %>">
+
+     <%if(release.attributes.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= release.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+     <image class="image-bibliotheque" src="ressources/default-release.png">
+<% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= release.get("name") %></p>
+    </div>
+
+    </a>
+
+
+    </div>
+
+  
+    <% }); %>
+    </ul>
+
+ 
+
+
+</script>
+
+
+
+
+

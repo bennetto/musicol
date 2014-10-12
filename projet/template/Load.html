@@ -1,0 +1,33 @@
+
+
+<script>
+  var degree = 0;
+</script>
+<script type="text/template" id="template_load">
+     <div class="div-imgload">
+     <p>
+         <img class="imgLoad" src="ressources/Load.png"></img>
+    </p>
+    </div>
+    <% 
+      
+            $(function() {
+
+    if(typeof first == 'undefined' ){
+        function rotate() {    
+            $('.imgLoad').css({ transform: 'rotate(' + degree + 'deg)'});
+            // timeout increase degrees:
+           var timer = setTimeout(function() {
+                ++degree;
+                rotate(); // loop it
+            },1);
+        }
+        rotate(); 
+         // run it!
+      first = true;
+        }
+       
+    });%>
+        
+        
+</script>

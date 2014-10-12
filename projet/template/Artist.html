@@ -1,0 +1,85 @@
+
+<script>
+
+function launchRelease(id)
+{
+      window.location = "#bibliotheque/releases/"+id;
+      }
+
+</script>
+
+<script type="text/template" id="template_artist">
+
+ <div class="template-header" >
+        
+   <div class="page-header" >
+            <h1><%= artist.get("name") %></h1>
+    </div>
+    
+     <image class="image-release" src=<%=artist.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload")%>/>
+</div>
+ <!-- Description -->
+         
+         <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+  
+    <div class="panel-heading">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >
+      <h4 class="panel-title">
+          Description
+      </h4></a>
+    </div>
+    
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body"><%= artist.get("description") %></div>
+    </div>
+  </div>
+    </div>       
+    
+     <!-- Style -->
+      <div  classe ="release-style" >
+             <h3>Styles :</h3>
+             <ul>
+             <% _.each( artist.get("styles") ,function(style){ %>
+             <li><%=style.name%> </li>
+                <%}); %>
+             </ul>
+            </div>
+         
+         </div>
+
+       
+     <h3>Albums : </h3>
+     <div class="row">
+    <% _.each(artist.releases ,function(release){ %>
+       
+       
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/releases/<%=release.id%>">
+
+     <%if(release.image != undefined &&  release.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= release.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+      <image class="image-bibliotheque" src="ressources/default-release.png">
+    <% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= release.name %></p>
+    </div>
+    </a>
+    </div>
+    <% }); %>
+    </div>
+       
+       
+       
+       
+       
+   
+
+
+
+</script>
+
+
+
+

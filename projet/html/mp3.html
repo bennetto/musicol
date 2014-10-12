@@ -1,0 +1,76 @@
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+  
+    <div class="progress progress-striped active">
+        <div class="bar progress-bar progress-bar-info"  role="progressbar" style="width:0%;"></div>
+    </div>
+  
+
+<div id="img">
+    <img src="ressources/note_musique.jpg" id="img_musique"/>
+</div>
+
+<!-- <div id="artiste">
+   Nom artiste
+</div>
+-->
+
+<div id="titre">
+   
+</div>
+
+
+
+
+<div id="boutons">
+  <img src="ressources/back.png" id="back"/>
+  <img src="ressources/play.png" id="play" />
+  <img src="ressources/pause.png" id="pause"/>
+  <img src="ressources/forward.png" id="forward"/>
+</div>  
+  
+  
+ 
+  <script src="projet/js/mp3.js"></script>
+  <script src="lib/audio5/js/audio5.js"></script>
+ 
+
+ 
+  <script>
+   
+      var playButton = document.getElementById("play");
+      var pauseButton = document.getElementById("pause");
+      pauseButton.style.display = 'none';
+      var backButton = document.getElementById("back");
+      var forwardButton = document.getElementById("forward");
+      var barProgress = $(".bar");
+      
+      var mp3 = new Mp3Player();
+      mp3.initAudioPlayer();
+      mp3.setPlaylist(app.currentPlaylist);
+      mp3.setPlayButton(playButton);
+      mp3.setPauseButton(pauseButton);
+      mp3.setBackButton(backButton);
+      mp3.setForwardButton(forwardButton);
+      mp3.setBarProgress(barProgress);
+      
+      $( document ).ready(function() {
+     setTimeout(function() {
+      //Centrage des boutons du player
+      var valeur= ( ($( '.player' ).width() - $('#boutons').width())/2);
+      $('#boutons').css("margin-right",valeur);
+ 
+      $( window ).resize(function() {
+        var valeur= ( ($( '.player' ).width() - $('#boutons').width())/2);
+        $('#boutons').css("margin-right",valeur);
+      });
+}, 100);
+   
+      
+});
+    
+
+</script>
+  
+  

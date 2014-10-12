@@ -1,0 +1,60 @@
+
+<script>
+    
+      function changeSourceLecture(trackId)
+    {
+        app.currentPlaylist.currentPosition = trackId;
+        mp3.playlistChanged(trackId);
+    }
+      // Listen for the event.
+      
+        function refreshCurrentMusic()
+            {
+                if ($(".playlistCurrent").find('td')[0] != undefined)
+                {
+                    var i = 0;
+                    app.currentPlaylist.tracks.forEach(function() {
+                        $(".playlistCurrent").find('td')[i].className = "";
+                        i++;
+                    });
+                    $(".playlistCurrent").find('td')[app.currentPlaylist.currentPosition].classList.add("info");
+                }
+            }
+
+            document.addEventListener('changeMusicEvent', function() {
+                refreshCurrentMusic();
+            }, false);
+
+
+</script>
+<script type="text/template" id="template_lecture">
+    
+
+    <h1>Lecture en cours</h1>
+
+     <table class="table table-hover  playlistCurrent ">
+    <thead>  
+          <tr>  
+            <th>nom</th>  
+
+          </tr>  
+        </thead>
+
+    <tbody>
+    <%var i = 0; %>
+    <% _.each( app.currentPlaylist.tracks ,function(track){ %>
+       
+    <tr>
+    <td  onclick="changeSourceLecture('<%=i%>')"><%= track.name %></td>
+    </tr>
+    
+    <%i++;%>
+    
+    <% }); %>
+    </tbody>
+    </table>
+<%refreshCurrentMusic();%>
+
+</script>
+
+

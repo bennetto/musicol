@@ -1,0 +1,56 @@
+
+
+<script>
+function addLabels()
+{
+   app.datas.artists.nextFetch();
+}
+</script>
+
+<script type="text/template" id="template_labels">
+
+
+
+    <div class="row">
+    <%var index = 0; %>
+    
+    <% _.each( labels.models ,function(label){ %>
+
+
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/labels/<%= label.get("id") %>">
+
+     <%if(label.attributes.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= label.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+     <image class="image-bibliotheque" src="ressources/default-release.png">
+<% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= label.get("name") %></p>
+    </div>
+
+    </a>
+
+
+    </div>
+
+  
+    <% }); %>
+    </div>
+
+ 
+<div class="div-btn-add">
+   <button type="button" class="btn btn-primary "  onclick="addLabels()" >Plus de labels</button>
+   </div
+ 
+  
+
+
+
+
+</script>
+
+
+
+
+

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Projet IHM</title>
+        <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="projet/css/login.css">
+         <script>
+             if( sessionStorage.getItem("authorizateId"))
+             {
+                   window.location = "musicol.php";
+             }
+                
+         </script>
+    </head>
+    <body>
+       
+        <div class="content col-lg-2 col-md-2 col-sm-6 col-xs-10 col-md-offset-5 col-md-offset-5 col-sm-offset-3 col-xs-offset-1">
+            <h1>Login Musicol</h1>
+
+            <form class="form-horizontal" onsubmit="return login()">
+                <div class="form-group">
+                        <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+                <div class="form-group">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                 <div class="form-group">
+
+                   
+                        <button type="submit" class="btn btn-primary" id="loginButton"  >Connecter</button>
+                </div>
+            </form>
+
+            </div>
+   
+      
+        
+      
+    </body>
+    
+      <script src="lib/jQuery/jquery-1.10.2.min.js"></script>
+       <script type="text/javascript" src="lib/Base64.js"></script>
+         
+    <script>
+        
+       
+        
+        function login()
+        {
+            var email = $("#inputEmail").val();
+            var password = $("#inputPassword").val();
+            
+            
+            $.ajax({
+            type: "POST",
+                 dataType: "json",
+                 crossDomain: true,
+                 url: "http://ihm-api.telecom-st-etienne.fr/sessions",
+                 data: {
+                    "email_address": email,
+                    "password": password}
+ 
+             }).done(function(data) {
+                console.log("done");
+                
+                var encode = encodePlain(data.id);
+               // alert("encode done : "+encode);
+               //sessionStorage.setItem("authorizateId", encode);
+                 
+                 sessionStorage.authorizateId = encode;
+                  // alert("authorizateId done");
+                  window.location = "musicol.php";
+             })
+                     .fail(function() {
+                         console.log("fail");
+                     });
+            
+          return false;
+        }
+    </script>
+</html>

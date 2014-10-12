@@ -1,0 +1,234 @@
+
+<script>
+
+    var tracks= new Array();
+    var _release;
+    function changeSource(trackId)
+    {
+        app.currentPlaylist.currentPosition = trackId;
+        
+        app.currentPlaylist.tracks = new Array();
+        var i=0;
+        tracks.forEach(function(track){
+             app.currentPlaylist.tracks[i] = track;
+             i++;
+        });
+        
+        console.log(tracks[trackId].source);
+        mp3.playlistChanged(trackId);
+    }
+
+
+
+
+    
+function addFavorite(ReleaseId)
+{
+        $.ajax({
+            type: "POST",
+                 dataType: "json",
+                 crossDomain: true,
+                 url: "http://ihm-api.telecom-st-etienne.fr/releases/"+ReleaseId+"/favorite",
+                headers:{'Authorization' :app.authorizateId}
+ 
+             }).done(function() {
+                 _release.set("favorited",true);
+                 $('.release-favorite').find("img")[0].src = "ressources/favorite_true.png";
+            })
+              .fail(function() {
+                    console.log("fail");
+         });
+}
+
+function removeFavorite(ReleaseId)
+{
+        $.ajax({
+            type: "DELETE",
+                 dataType: "json",
+                 crossDomain: true,
+                 url: "http://ihm-api.telecom-st-etienne.fr/releases/"+ReleaseId+"/favorite",
+                headers:{'Authorization' :app.authorizateId}
+ 
+             }).done(function() {
+                 _release.set("favorited",false);
+                  $('.release-favorite').find("img")[0].src = "ressources/favorite_false.png";
+             })
+              .fail(function() {
+                    console.log("fail");
+         });
+
+}
+function changeFavorite()
+{
+    if(_release.get("favorited") == true){
+        removeFavorite(_release.get("id"));
+    }
+    else
+    {
+         addFavorite(_release.get("id"));
+    }
+}
+
+
+
+        function refreshCurrentReleaseTrack()
+            {
+                if ($(".template-body-release").find('td')[0] != undefined)
+                {
+                    var i = 0;
+                    tracks.forEach(function() {
+                        $(".template-body-release").find('td')[i].className = "";
+                        i++;
+                    });
+                    tracks.forEach(function(trackTmp) {
+                        if (trackTmp.track_id == app.currentPlaylist.tracks[app.currentPlaylist.currentPosition].track_id)
+                        {
+                            $(".template-body-release").find('#track' + trackTmp.track_id)[0].classList.add("info");
+                        }
+                    });
+
+
+                }
+            }
+
+            document.addEventListener('changeMusicEvent', function() {
+              refreshCurrentReleaseTrack();
+            }, false);
+
+
+
+</script>
+
+<script type="text/template" id="template_release">
+
+  <%_release = release%>
+        <div class="template-header" >
+        
+   <div class="page-header" >
+            <h1><%= release.get("name") %>  <a href="#bibliotheque/artists/<%=release.get('artists')[0].id%>"><small> <%= release.get("artists")[0].name %></small></a></h1>
+    </div>
+            <image class="image-release" src=<%=release.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload")%>/>
+
+         
+         
+         
+         <!-- Description -->
+         
+         <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+  
+    <div class="panel-heading">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >
+      <h4 class="panel-title">
+          Description
+      </h4></a>
+    </div>
+    
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body"><%= release.get("description") %></div>
+    </div>
+  </div>
+    </div>       
+         
+     <div  class ="release-favorite" >
+     
+     <%if(release.get("favorited") == true){%>
+           <image  onClick="changeFavorite()" class="image-release" src="ressources/favorite_true.png"/>
+       <%}else{%>   
+       <image onclick="changeFavorite()" class="image-release" src="ressources/favorite_false.png"/> 
+       <%}%>
+     </div>
+ 
+
+            <div  classe ="release-style" >
+             <h3>Styles :</h3>
+             <ul>
+             <% _.each( release.get("styles") ,function(style){ %>
+             <li><%=style.name%> </li>
+                <%}); %>
+             </ul>
+            </div>
+    
+     <div  class ="release-label" >
+     <h3>Label :</h3>
+            <a href="#bibliotheque/labels/<%=release.get('label').id%>"><p><%= release.get("label").name %></p></a>
+      </div>
+
+        </div>
+
+ <h3>Pistes : </h3>
+     <div class="template-body-release" >
+    <table class="table table-hover">
+    <thead>  
+          <tr>  
+            <th>nom</th>  
+
+          </tr>  
+        </thead>
+
+    <tbody>
+    <%var i = 0;
+      tracks= new Array();%>
+    <% _.each( release.get("tracklist") ,function(track){ %>
+    
+    <%track.img =  release.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload");
+    track.releaseId = release.id;
+    
+    
+    %>
+    <%
+    if(track !=undefined )
+    {
+        
+        tracks[i] = track;
+    }
+    
+    %><tr>
+    
+    
+    
+    <% if(track.source == "http://demo.wikimic.org//mp3/.mp3") {%>
+                   <td id="track<%=track.track_id%>" class="danger" ><%= track.name %></td>  
+    <% }else if(app.isEnCoursTrack(track)){%>       
+               <td id="track<%=track.track_id%>" class="info" onclick="changeSource('<%=i%>')"><%= track.name %></td>  
+    <% }else{%>   
+            <td id="track<%=track.track_id%>" onclick="changeSource('<%=i%>')"><%= track.name %></td>  
+    
+       <% } %> 
+   
+
+    
+    </tr>
+    <%i++;%>
+    
+    <% }); %>
+</tbody>
+    </table>
+</div>
+
+ <div class="template-footer" >
+ 
+  <h3>Similaires : </h3>
+     <div class="row">
+    <% _.each(release.similars ,function(similar){ %>
+       
+       
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/releases/<%=similar.id%>">
+
+     <%if(similar.image != undefined &&  similar.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= similar.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+      <image class="image-bibliotheque" src="ressources/default-release.png">
+    <% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= similar.name %></p>
+    </div>
+    </a>
+    </div>
+    <% }); %>
+    </div>
+ 
+ </div>
+
+</script>

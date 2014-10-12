@@ -1,0 +1,101 @@
+.progress{
+    width:100%;
+    height:5px;
+    margin-bottom: 2px;
+}
+
+@media screen and (min-width:750px) {
+
+#boutons{
+    float:right;
+}
+
+#img_musique
+{
+    float: left;
+    margin-left: 10%;
+    margin-top: 3px;
+    height: 50px;
+}
+
+
+#titre
+{
+    float: left;
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+
+#play
+{
+    height:45px;
+}
+
+#forward
+{
+    height:35px;
+    margin-left:5px;
+}
+
+
+#back
+{
+    height:35px;
+    margin-right:5px;
+}
+
+#pause
+{
+    height:45px;
+}
+
+
+
+}
+
+@media screen and (max-width: 750px) {
+   
+#boutons{
+    float:right;
+}
+
+#img_musique
+{
+    float: left;
+    margin-left: 10px;
+    margin-top:15px;
+    height: 40px;
+    position: absolute;
+}
+    
+#titre
+{
+    /* text-align: center; */
+}
+
+#play
+{
+    height:40px;
+}
+
+#forward
+{
+    height:30px;
+}
+
+
+#back
+{
+    height:30px;
+}
+
+#pause
+{
+    height:40px;
+}
+
+
+
+}

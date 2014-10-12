@@ -1,0 +1,75 @@
+<script type="text/template" id="template_label">
+
+
+ <div class="template-header" >
+        
+   <div class="page-header" >
+            <h1><%= label.get("name") %></h1>
+    </div>
+    
+     
+     <image class="image-release" src=<%=label.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload")%>/>
+</div>
+
+<!-- Description -->
+         
+         <div class="panel-group" id="accordion">
+  <div class="panel panel-default">
+  
+    <div class="panel-heading">
+    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" >
+      <h4 class="panel-title">
+          Description
+      </h4></a>
+    </div>
+    
+    <div id="collapseOne" class="panel-collapse collapse">
+      <div class="panel-body"><%= label.get("description") %></div>
+    </div>
+  </div>
+    </div>   
+    
+      <!-- Style -->
+      <div  classe ="release-style" >
+             <h3>Styles :</h3>
+             <ul>
+             <% _.each( label.get("styles") ,function(style){ %>
+             <li><%=style.name%> </li>
+                <%}); %>
+             </ul>
+            </div>
+         
+         </div>
+    
+</div>
+
+   
+
+       
+     <h3>Artists : </h3>
+     <div class="row">
+    <% _.each(label.artists ,function(artist){ %>
+       
+       
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/artists/<%=artist.id%>">
+
+     <%if(artist.image != undefined &&  artist.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= artist.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+      <image class="image-bibliotheque" src="ressources/default-release.png">
+    <% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= artist.name %></p>
+    </div>
+    </a>
+    </div>
+    <% }); %>
+    </div>
+
+
+
+</script>
+
+
+

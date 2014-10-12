@@ -1,0 +1,84 @@
+/* line 12, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000312}}
+.header {
+  background-color: #ddddda;
+  height: 52px;
+  position: absolute;
+  width: 100%;
+}
+/* line 18, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000318}}
+.menu-content-container {
+  position: absolute;
+  top: 52px;
+  bottom: 60px;
+  width: 100%;
+}
+/* line 24, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000324}}
+.menu-content-container .menu {
+  overflow-y: auto;
+}
+/* line 29, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000329}}
+.menu-content-container .menu .nav li p {
+  word-wrap: break-word;
+}
+/* line 40, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000340}}
+.menu {
+  background-color: #ddddda;
+  position: relative;
+  float: left;
+  height: 100%;
+  width: 200px;
+}
+/* line 49, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000349}}
+.content {
+  position: relative;
+  height: 100%;
+  overflow-y: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+/* line 62, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000362}}
+.player {
+  background-color: #ddddda;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+/* line 76, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000376}}
+.nav-pills li a {
+  border-radius: 0px;
+}
+/* line 86, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+@media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000386}}
+.menu-content-container .menu h3 {
+  margin: 5px;
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 750px) {
+  /* line 95, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\0000395}}
+  .player {
+    background-color: #ddddda;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+  }
+  /* line 103, C:\Users\benjamin\Documents\NetBeansProjects\peda-idm-b2\projet\less\index.less */
+  @media -sass-debug-info{filename{font-family:file\:\/\/C\:\/Users\/benjamin\/Documents\/NetBeansProjects\/peda-idm-b2\/projet\/less\/index\.less}line{font-family:\00003103}}
+  .menu-content-container .menu h3 {
+    margin: 5px;
+    position: relative;
+    margin-bottom: 20px;
+  }
+}

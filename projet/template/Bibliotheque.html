@@ -1,0 +1,71 @@
+
+
+
+<script>
+    
+
+    
+function addReleases()
+{
+   app.datas.releases.nextFetch();
+}
+
+    function scrollLoad()
+{ 
+    var content = $(".content");
+   
+  
+     content.scroll(function() { 
+         if(content != undefined && content.find(".row") != null && content.find(".row") != undefined && content.find(".row") != []){
+            if(content.scrollTop() + content.height() >= content.find(".row").height()) {
+                content.unbind('scroll');
+                console.log("bottom!");
+            }
+        }
+});
+}
+
+</script>
+
+<script type="text/template" id="template_bibliotheque">
+
+
+
+    <div class="row">
+    <%var index = 0; %>
+    
+    <% _.each( releases.models ,function(release){ %>
+
+
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/releases/<%= release.get("id") %>">
+
+     <%if(release.attributes.image != undefined &&  release.attributes.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= release.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+      <image class="image-bibliotheque" src="ressources/default-release.png">
+    <% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= release.get("name") %></p>
+    </div>
+
+    </a>
+
+
+    </div>
+
+  
+    <% }); %>
+    </div>
+
+<div class="div-btn-add">
+   <button type="button" class="btn btn-primary "  onclick="addReleases()" >Plus d'albums</button>
+   </div
+
+
+</script>
+
+
+
+
+

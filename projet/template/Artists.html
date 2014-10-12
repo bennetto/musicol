@@ -1,0 +1,51 @@
+<script>
+function addArtistes()
+{
+   app.datas.artists.nextFetch();
+}
+</script>
+
+<script type="text/template" id="template_artists">
+
+
+
+    <div class="row">
+    <%var index = 0; %>
+    
+    <% _.each( artists.models ,function(artist){ %>
+
+
+    <div class=" col-xs-6 col-sm-4 col-md-3  col-lg-2  release-bibliotheque">
+    <a href="#bibliotheque/artists/<%= artist.get("id") %>">
+
+     <%if(artist.attributes.image.square != undefined) {%>
+    <image class="image-bibliotheque" src=<%= artist.attributes.image.square.url.replace("imageupload","imagecache/200x200/imageupload") %>>
+    <% }else{ %>
+     <image class="image-bibliotheque" src="ressources/default-release.png">
+<% } %>
+    <div class="div-release-bibliotheque">
+    <p><%= artist.get("name") %></p>
+    </div>
+
+    </a>
+
+
+    </div>
+
+  
+    <% }); %>
+    </div>
+
+
+<div class="div-btn-add">
+   <button type="button" class="btn btn-primary "  onclick="addArtistes()" >Plus d'artists</button>
+   </div
+ 
+
+
+</script>
+
+
+
+
+
